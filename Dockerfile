@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 
-RUN apt-get update && apt-get install -y openssh-server net-tools dnsutils rsync netcat curl
+RUN apt-get update && apt-get install -y openssh-server net-tools dnsutils rsync netcat curl jq
 RUN mkdir /var/run/sshd
 RUN echo 'root:root' | chpasswd
 RUN sed -i 's/#*PermitRootLogin.*/PermitRootLogin yes/' /etc/ssh/sshd_config
