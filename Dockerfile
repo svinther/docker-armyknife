@@ -11,6 +11,7 @@ curl \
 telnet \
 jq \
 postgresql-client \
+less \
 && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir /var/run/sshd
