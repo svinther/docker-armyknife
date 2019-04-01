@@ -6,6 +6,7 @@ iputils-ping \
 net-tools \
 iproute2 \
 dnsutils \
+nmap \
 rsync \
 netcat \
 curl \
