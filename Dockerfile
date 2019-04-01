@@ -16,6 +16,7 @@ postgresql-client \
 less \
 pv \
 git \
+vim \
 && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir /var/run/sshd
