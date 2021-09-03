@@ -1,6 +1,6 @@
-FROM ubuntu:20.04
+FROM debian:10.10-slim
 
-RUN apt-get update && apt-get install -y \
+RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y \
 openssh-server \
 iputils-ping \
 net-tools \
