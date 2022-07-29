@@ -1,4 +1,6 @@
-FROM debian:10.10-slim
+FROM debian:10.12-slim
+
+ARG KUBECTL_VERSION="v1.23.9"
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y \
 openssh-server \
@@ -18,6 +20,10 @@ pv \
 git \
 vim \
 && rm -rf /var/lib/apt/lists/*
+
+#https://kubernetes.io/releases/
+RUN curl -L -o /usr/local/bin/kubectl https://dl.k8s.io/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl \
+&& chmod +x /usr/local/bin/kubectl
 
 RUN mkdir /var/run/sshd
 RUN echo 'root:root' | chpasswd
